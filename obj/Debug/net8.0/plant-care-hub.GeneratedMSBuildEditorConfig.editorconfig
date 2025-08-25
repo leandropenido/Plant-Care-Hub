@@ -1,0 +1,129 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = plant_care_hub
+build_property.RootNamespace = plant_care_hub
+build_property.ProjectDir = C:\Users\leand\Downloads\Nova pasta (6)\pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main\plant-care-hub\plant-care-hub\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = C:\Users\leand\Downloads\Nova pasta (6)\pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main\plant-care-hub\plant-care-hub
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Dashboard/Feed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEZlZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Dashboard/Forum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEZvcnVtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Dashboard/Library.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXExpYnJhcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Home/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Home/Help.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIZWxwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Perfil/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZmlsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Shared/SuccessModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFN1Y2Nlc3NNb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Shared/_LayoutDasboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXREYXNib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Usuarios/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQWNjZXNzRGVuaWVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Usuarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Usuarios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Usuarios/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Usuarios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Usuarios/EsqueciSenha.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRXNxdWVjaVNlbmhhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Usuarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Usuarios/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Usuarios/MensagemEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcTWVuc2FnZW1FbWFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Usuarios/ModificarSenha.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcTW9kaWZpY2FyU2VuaGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leand/Downloads/Nova pasta (6)/pmv-ads-2025-1-e2-proj-int-t8-plantcarehub-main/plant-care-hub/plant-care-hub/Views/Shared/LandingPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExhbmRpbmdQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-k7vniddyxp

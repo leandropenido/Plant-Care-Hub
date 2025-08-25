@@ -1,0 +1,59 @@
+﻿@model plant_care_hub.Models.User
+
+@{
+    ViewData["Title"] = "esqueciminhasenha";
+}
+
+<div id="esqueciminhasenha">
+    <div class="esqueciminhasenha-content">
+        <div class="inner">
+            <h1>
+                <!-- Ícone esqueciminhasenha -->
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="#efcf3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-key-round-icon lucide-key-round">
+                    <path
+                        d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" />
+                    <circle cx="16.5" cy="7.5" r=".5" fill="currentColor" />
+                </svg>
+                <span>Esqueceu sua senha?</span>
+            </h1>
+            <p class="subtitle">Insira e-mail para receber um link de redefinição</p>
+            <form id="esqueciminhasenhaForm" asp-action="esqueciminhasenha">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div>
+                    <label asp-for="Email">E-mail</label>
+                    <div class="input-group">
+                        <!-- Ícone Mail -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#dcdcdc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-mail-icon lucide-mail">
+                            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                        </svg>
+                        <input type="email" id="email" asp-for="Email" placeholder="Digite seu e-mail"
+                            autocomplete="email" required />
+                    </div>
+                    <span asp-validation-for="Email" class="text-danger msg-erro"></span>
+                </div>
+                <button type="submit" id="submitBtn" asp-controller="Usuarios" asp-action="esqueciminhasenha">Envia código agora</button>
+
+                <a class="link-auth" asp-controller="Usuarios" asp-action="Create">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-move-left-icon lucide-move-left">
+                        <path d="M6 8L2 12L6 16" />
+                        <path d="M2 12H22" />
+                    </svg>Voltar para tela de acesso</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

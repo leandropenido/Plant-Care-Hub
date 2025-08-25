@@ -1,0 +1,121 @@
+﻿@using plant_care_hub.Constants
+@model plant_care_hub.Models.User
+
+@{
+    ViewData["Title"] = "Cadastro - PlantCareHub";
+}
+
+<section id="create_account">
+<div class="container">
+    <div class="form-box">
+        <h2>🌱 Bem-vindo à plataforma da <strong>PlantCareHub</strong></h2>
+        <p>Preencha suas informações para criar sua conta</p>
+
+        <form asp-action="Create">
+            <div class="form-row">
+                <div>
+                    <label>Nome</label>
+                    <input asp-for="Name" class="form-control" placeholder="Digite seu nome" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <label>WhatsApp</label>
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="Digite seu número de celular" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label>E-mail</label>
+                    <input asp-for="Email" class="form-control" placeholder="Digite seu e-mail" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <label>Senha</label>
+                    <input asp-for="Password" class="form-control" type="password" placeholder="Digite sua senha" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-register">Cadastrar agora</button>
+        </form>
+    </div>
+</div>
+</section>
+
+@* @section Styles { *@
+@*     <style> *@
+@*         body { *@
+@*             background-color: #ffffff; *@
+@*             font-family: 'Segoe UI', sans-serif; *@
+@*         } *@
+
+@*         .container { *@
+@*             display: flex; *@
+@*             justify-content: center; *@
+@*             align-items: center; *@
+@*             height: 90vh; *@
+@*         } *@
+
+@*         .form-box { *@
+@*             background: white; *@
+@*             padding: 40px; *@
+@*             border-radius: 8px; *@
+@*             box-shadow: 0 0 10px rgba(0,0,0,0.1); *@
+@*             width: 600px; *@
+@*         } *@
+
+@*             .form-box h2 { *@
+@*                 margin-bottom: 10px; *@
+@*             } *@
+
+@*             .form-box p { *@
+@*                 margin-bottom: 20px; *@
+@*                 color: #555; *@
+@*             } *@
+
+@*         .form-row { *@
+@*             display: flex; *@
+@*             gap: 20px; *@
+@*             margin-bottom: 20px; *@
+@*         } *@
+
+@*             .form-row div { *@
+@*                 flex: 1; *@
+@*             } *@
+
+@*         input.form-control { *@
+@*             width: 100%; *@
+@*             padding: 10px; *@
+@*             border: 1px solid #ddd; *@
+@*             border-radius: 5px; *@
+@*         } *@
+
+@*         .btn-register { *@
+@*             background-color: #049c44; *@
+@*             color: white; *@
+@*             border: none; *@
+@*             padding: 12px 20px; *@
+@*             border-radius: 5px; *@
+@*             cursor: pointer; *@
+@*             width: 100%; *@
+@*             font-size: 16px; *@
+@*         } *@
+
+@*             .btn-register:hover { *@
+@*                 background-color: #037837; *@
+@*             } *@
+
+@*         .text-danger { *@
+@*             color: red; *@
+@*             font-size: 12px; *@
+@*         } *@
+@*     </style> *@
+@* } *@
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

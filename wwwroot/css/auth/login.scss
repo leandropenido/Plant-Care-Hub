@@ -1,0 +1,227 @@
+#login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  .login-content {
+    background: #fff;
+    padding: 5rem 2.5rem;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 6px 6px 14px rgba(91, 91, 91, 0.04);
+    box-sizing: border-box;
+
+    @media screen and (max-width: 600px) {
+        &{
+                padding: 3rem 20px;
+        }
+    }
+  }
+
+  .inner {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color--gray-900);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  p.subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color--gray-960);
+    margin: 0 0 1.25rem 0;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color--gray-960);
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color--gray-100);
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0 0.3rem 0;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .input-group:focus-within {
+    border-color: var(--color--yellow-black);
+    outline: 1px solid var(--color--yellow-black);
+    box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.3);
+  }
+  .msg-erro {
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+
+  .input-group:focus-within svg {
+    stroke: var(--color--yellow-black);
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    /* Define uma transição com um longo atraso */
+    transition: background-color 5000s ease-in-out 0s;
+
+    /* Força a cor do texto para a desejada (ex: preto) */
+    -webkit-text-fill-color: #000 !important;
+
+    /* Usa um box-shadow grande para simular o fundo desejado.
+     Altere 'white' para a cor de fundo do seu input. */
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  }
+  input[type="email"],
+  input[type="password"],
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0.7rem 0.5rem;
+    color: var(--color--gray-960);
+    background: transparent;
+    width: 90%;
+  }
+
+  input::placeholder {
+    color: var(--color--green-dark);
+    transition: color 0.3s;
+  }
+
+  .input-group:focus-within input::placeholder {
+    color: var(--color--yellow-black);
+  }
+
+  .password-wrapper {
+    position: relative;
+  }
+
+  .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    stroke: var(--color--gray-960);
+  }
+  button[type="submit"] {
+    margin-top: 1.25rem;
+    width: 100%;
+    background-color: var(--color--green-light);
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s;
+  }
+
+  button[type="submit"]:hover:not(:disabled) {
+    opacity: 0.85;
+  }
+
+  button[type="submit"]:disabled {
+    background-color: #475569;
+    cursor: not-allowed;
+  }
+  .link-auth {
+    display: block;
+    color: var(--color--gray-500);
+    text-align: center;
+    width: 250px;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    font-size: 14px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    span {
+      color: var(--color--yellow-black);
+    }
+  }
+  .actions-auth {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+
+    @media screen and (max-width: 400px) {
+        &{
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+    }
+  }
+  .actions-link-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    label {
+      color: var(--color--gray-550);
+      font-weight: 400;
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+  }
+  .link-auth-esquecisenha {
+    color: var(--color--yellow-black);
+    //margin-left: auto;
+    font-size: 14px;
+    font-weight: 700;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  /* Spinner Animation */
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .spinner {
+    margin-right: 0.5rem;
+    animation: spin 1s linear infinite;
+    fill: currentColor;
+  }
+}

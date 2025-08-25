@@ -1,0 +1,264 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutDasboard.cshtml";
+    ViewData["Title"] = "Aprenda, compartilhe e conecte-se";
+    ViewData["page_name"] = "feed";
+}
+
+<section id="feed">
+    <div class="feed-content max-w-[1125px]">
+        <div class="feed-laterais">
+            <div class="pb-2 mb-3 border-bottom">
+                <h2>Seguir pessoas que talvez você conheça</h2>
+            </div>
+            <ul>
+                <li class="feed-lateral-follow">
+                    <div class="feed-lateral-follow-client">
+                        <img src="/img/users/default.png" alt="José Antonio">
+                        <div class="feed-lateral-follow-user">
+                            <p class="feed-lateral-follow-nome">José Antônio</p>
+                            <p class="feed-lateral-follow-funcao">4 seguidores</p>
+                        </div>
+                    </div>
+                    <div onclick="alert('add')" class="feed-lateral-follow-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-user-plus-icon lucide-user-plus">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <line x1="19" x2="19" y1="8" y2="14" />
+                            <line x1="22" x2="16" y1="11" y2="11" />
+                        </svg>
+                    </div>
+                </li>
+                <li class="feed-lateral-follow">
+                    <div class="feed-lateral-follow-client">
+                        <img src="/img/users/default.png" alt="José Antonio">
+                        <div class="feed-lateral-follow-user">
+                            <p class="feed-lateral-follow-nome">José Antônio</p>
+                            <p class="feed-lateral-follow-funcao">4 seguidores</p>
+                        </div>
+                    </div>
+                    <div onclick="alert('add')" class="feed-lateral-follow-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-user-plus-icon lucide-user-plus">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <line x1="19" x2="19" y1="8" y2="14" />
+                            <line x1="22" x2="16" y1="11" y2="11" />
+                        </svg>
+                    </div>
+                </li>
+                <li class="feed-lateral-follow">
+                    <div class="feed-lateral-follow-client">
+                        <img src="/img/users/default.png" alt="José Antonio">
+                        <div class="feed-lateral-follow-user">
+                            <p class="feed-lateral-follow-nome">José Antônio</p>
+                            <p class="feed-lateral-follow-funcao">4 seguidores</p>
+                        </div>
+                    </div>
+                    <div onclick="alert('add')" class="feed-lateral-follow-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-user-plus-icon lucide-user-plus">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <line x1="19" x2="19" y1="8" y2="14" />
+                            <line x1="22" x2="16" y1="11" y2="11" />
+                        </svg>
+                    </div>
+                </li>
+                <li class="feed-lateral-follow">
+                    <div class="feed-lateral-follow-client">
+                        <img src="/img/users/default.png" alt="José Antonio">
+                        <div class="feed-lateral-follow-user">
+                            <p class="feed-lateral-follow-nome">José Antônio</p>
+                            <p class="feed-lateral-follow-funcao">4 seguidores</p>
+                        </div>
+                    </div>
+                    <div onclick="alert('add')" class="feed-lateral-follow-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-user-plus-icon lucide-user-plus">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <line x1="19" x2="19" y1="8" y2="14" />
+                            <line x1="22" x2="16" y1="11" y2="11" />
+                        </svg>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="feed-central">
+            <form method="post" class="feed-form">
+                <div class="feed-form-textarea pb-3 mb-3 border-bottom">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M20.3415 19.2089C20.7052 19.2089 21 19.498 21 19.8545C21 20.1813 20.7523 20.4514 20.4308 20.4941L20.3415 20.5H13.471C13.1073 20.5 12.8125 20.211 12.8125 19.8545C12.8125 19.5277 13.0602 19.2576 13.3816 19.2148L13.471 19.2089H20.3415ZM13.6592 4.41662C14.906 3.19446 16.9283 3.19446 18.175 4.41662L19.4694 5.6854C20.7162 6.90755 20.7162 8.88985 19.4694 10.112L9.74061 19.6486C9.1843 20.1939 8.43007 20.4999 7.64282 20.4999H3.65854C3.28841 20.4999 2.99098 20.201 3.00021 19.8383L3.10043 15.8975C3.12036 15.1526 3.43127 14.4425 3.96867 13.9157L13.6592 4.41662ZM12.906 6.979L4.89998 14.8287C4.60126 15.1215 4.42814 15.5169 4.41707 15.9305L4.33345 19.2084L7.64282 19.2088C8.03222 19.2088 8.4067 19.0745 8.70228 18.8317L8.8093 18.7357L16.855 10.849L12.906 6.979ZM17.2437 5.32953C16.5113 4.61156 15.323 4.61156 14.5905 5.32953L13.838 6.066L17.786 9.936L18.5381 9.19909C19.2298 8.52101 19.2683 7.44433 18.6534 6.72195L18.5381 6.59831L17.2437 5.32953Z"
+                            fill="#666666" />
+                    </svg>
+                    <textarea placeholder="Escreva alguma coisa..." name="" id="formTextarea"></textarea>
+                </div>
+                <div class="feed-form-actions">
+                    <div class="feed-form-actions-upload">
+                        <label for="feed_form_imagem">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <path
+                                    d="M16.3287 2C19.7319 2 22 4.42887 22 7.91408V16.0849C22 19.5703 19.7318 22 16.3287 22H7.66132C4.25977 22 2 19.5722 2 16.0849V7.91408C2 4.43059 4.26636 2 7.66132 2H16.3287ZM16.3287 3.50383H7.66132C5.12066 3.50383 3.50301 5.2387 3.50301 7.91408V16.0849C3.50301 18.7647 5.11469 20.4962 7.66132 20.4962H16.3287C18.8779 20.4962 20.497 18.7618 20.497 16.0849V7.91408C20.497 5.23744 18.8781 3.50383 16.3287 3.50383ZM17.0409 12.1835L17.1712 12.3086L19.2514 14.4561C19.5402 14.7543 19.5328 15.2303 19.2347 15.5193C18.9638 15.7821 18.546 15.7998 18.2552 15.5768L18.1721 15.5027L16.092 13.3553C15.7296 12.9814 15.1405 12.9779 14.7727 13.3269L14.692 13.4137L12.4589 16.1312C11.669 17.0939 10.2478 17.1971 9.32825 16.3903L9.20607 16.2747L8.31486 15.3648C8.08076 15.1217 7.70743 15.0987 7.44746 15.2949L7.36534 15.3684L5.83328 16.9855C5.54775 17.2869 5.07209 17.2996 4.77087 17.0139C4.49704 16.7542 4.46164 16.3372 4.67199 16.0372L4.74247 15.9509L6.27421 14.3341C7.0806 13.4819 8.40852 13.4365 9.26752 14.1967L9.39273 14.3167L10.2794 15.222C10.5386 15.4865 10.9541 15.4933 11.2219 15.2553L11.2976 15.1766L13.5309 12.4589C14.4182 11.3782 16.0159 11.2689 17.0409 12.1835ZM8.57265 6.64124C9.95763 6.64124 11.0817 7.76589 11.0817 9.15164C11.0817 10.5374 9.95763 11.662 8.57265 11.662C7.18772 11.662 6.06463 10.5374 6.06463 9.15164C6.06463 7.76583 7.18772 6.64124 8.57265 6.64124ZM8.57265 8.14507C8.01807 8.14507 7.56764 8.59611 7.56764 9.15164C7.56764 9.70716 8.01807 10.1582 8.57265 10.1582C9.12754 10.1582 9.57866 9.70684 9.57866 9.15164C9.57866 8.59643 9.12754 8.14507 8.57265 8.14507Z"
+                                    fill="#666666" />
+                            </svg>
+                            <span>Imagem</span></label>
+                        <input type="file" name="" style="display: none;" id="feed_form_imagem">
+
+                        <label for="feed_form_video">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <path
+                                    d="M12.573 4.4998C14.9952 4.4998 16.6815 6.03378 16.8611 8.28414L19.5083 7.20189C20.6537 6.73453 21.9034 7.52861 21.9944 8.73529L21.9997 8.8763V15.5153C21.9997 16.7525 20.7923 17.6087 19.6405 17.2369L19.5079 17.1886L16.8611 16.1062C16.6811 18.3551 14.9913 19.8908 12.573 19.8908H6.304C3.73889 19.8908 2 18.1717 2 15.7028V8.6878C2 6.21889 3.73889 4.4998 6.304 4.4998H12.573ZM12.573 5.9998H6.304C4.5635 5.9998 3.5 7.05119 3.5 8.6878V15.7028C3.5 17.3394 4.5635 18.3908 6.304 18.3908H12.573C14.3092 18.3908 15.377 17.3367 15.377 15.7028L15.3768 15.0172C15.3765 15.0066 15.3764 14.9959 15.3766 14.9852L15.377 8.6878C15.377 7.05158 14.3129 5.9998 12.573 5.9998ZM20.1433 8.57139L20.0755 8.59055L16.877 9.8968V14.4928L20.0751 15.7999C20.2556 15.8735 20.4507 15.7642 20.4918 15.5854L20.4997 15.5153V8.8763C20.4997 8.68151 20.3243 8.54201 20.1433 8.57139Z"
+                                    fill="#666666" />
+                            </svg>
+                            <span>Video</span></label>
+                        <input type="file" name="" style="display: none;" id="feed_form_video">
+                    </div>
+                    <button class="btn btn-success" type="submit">Publicar</button>
+                </div>
+            </form>
+            <div>
+                <div class="feed-posts">
+                    <div class="feed-posts-header">
+                        <div class="feed-posts-header-client">
+                            <img src="/img/users/default.png" alt="José Antonio">
+                            <div class="feed-posts-header-user">
+                                <p class="feed-posts-header-nome">José Antônio</p>
+                                <p class="feed-posts-header-funcao"><svg xmlns="http://www.w3.org/2000/svg" width="11"
+                                        height="11" viewBox="0 0 11 11" fill="none">
+                                        <path
+                                            d="M5.32355 5.01C5.32355 5.18294 5.18336 5.32313 5.01043 5.32313C4.8375 5.32313 4.6973 5.18294 4.6973 5.01C4.6973 4.83707 4.8375 4.69688 5.01043 4.69688C5.18336 4.69688 5.32355 4.83707 5.32355 5.01Z"
+                                            fill="#212121" />
+                                        <path
+                                            d="M5.32355 5.01C5.32355 5.18294 5.18336 5.32313 5.01043 5.32313C4.8375 5.32313 4.6973 5.18294 4.6973 5.01C4.6973 4.83707 4.8375 4.69688 5.01043 4.69688M5.32355 5.01C5.32355 4.83707 5.18336 4.69688 5.01043 4.69688M5.32355 5.01H6.88918M5.01043 4.69688V2.71375M8.76793 5.01C8.76793 7.08521 7.08564 8.7675 5.01043 8.7675C2.93522 8.7675 1.25293 7.08521 1.25293 5.01C1.25293 2.93479 2.93522 1.2525 5.01043 1.2525C7.08564 1.2525 8.76793 2.93479 8.76793 5.01Z"
+                                            stroke="#212121" stroke-width="0.501194" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg> Publicado há 3 horas</p>
+                            </div>
+                        </div>
+                        <div class="feed-posts-actions">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <circle cx="12" cy="12" r="2" fill="#666666" />
+                                <circle cx="12" cy="4" r="2" fill="#666666" />
+                                <circle cx="12" cy="20" r="2" fill="#666666" />
+                            </svg>
+                            <div class="feed-posts-actions-content">
+                                <ul>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-pen-line-icon lucide-file-pen-line"><path d="m18 5-2.414-2.414A2 2 0 0 0 14.172 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2"/><path d="M21.378 12.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><path d="M8 18h1"/></svg>Editar</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-icon lucide-trash"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>Deletar</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feed-posts-conteudo">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum et ipsum ac
+                            euismod. Pellentesque massa dolor, placerat nec enim vel, condimentum placerat odio. Mauris
+                            non metus arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tortor odio,
+                            malesuada et volutpat sed, varius vitae quam. Mauris in aliquam est. Phasellus molestie
+                            malesuada neque in aliquet.</p>
+                    </div>
+                    <div class="feed-posts-footer">
+                        <div class="feed-posts-footer-icons">
+                            <div class="feed-footer-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path
+                                        d="M6.48311 2.81529C8.2404 2.25003 10.1419 2.45344 11.733 3.35623L11.9964 3.51429L12.2645 3.35535C13.773 2.5013 15.5624 2.27309 17.2463 2.73623L17.512 2.81535C21.1847 3.9978 22.8291 8.00801 21.5937 11.8452C20.9743 13.6301 19.9584 15.2485 18.6174 16.5824C16.7927 18.3545 14.7812 19.9194 12.6218 21.2473L12.3926 21.3897C12.1598 21.5344 11.8656 21.5369 11.6304 21.3961L11.3849 21.2491C9.22254 19.9194 7.21101 18.3545 5.38004 16.5762C4.04534 15.2485 3.02947 13.6301 2.40482 11.8295C1.17386 8.00569 2.81152 3.99738 6.48311 2.81529ZM11.3746 4.85427C10.0706 3.96289 8.43331 3.72339 6.93153 4.20646C4.08746 5.12212 2.79808 8.27801 3.79207 11.3664C4.33877 12.9417 5.23505 14.3696 6.40582 15.5343C8.15375 17.2319 10.0805 18.7308 12.144 19.9998L12.0013 19.9098L12.4691 19.6156C14.1026 18.561 15.641 17.3642 17.0636 16.0421L17.5916 15.5405C18.7687 14.3696 19.665 12.9417 20.2064 11.382C21.2047 8.28096 19.9097 5.12284 17.0641 4.20669C15.4873 3.70082 13.766 3.99057 12.436 4.98625C12.1806 5.17742 11.8307 5.18111 11.5714 4.99538L11.3746 4.85427ZM15.8703 6.48374C17.1917 6.90551 18.1288 8.08859 18.2457 9.47853C18.2796 9.8807 17.9807 10.2341 17.5782 10.2679C17.1757 10.3017 16.822 10.0031 16.7881 9.60096C16.7206 8.79803 16.1814 8.11735 15.4252 7.87597C15.0404 7.75316 14.8281 7.34194 14.951 6.95749C15.0739 6.57304 15.4855 6.36093 15.8703 6.48374Z"
+                                        fill="#200E32" />
+                                </svg>
+                                <div class="feed-footer-icon-balao">+99</div>
+                            </div>
+                            <div class="feed-footer-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path
+                                        d="M12.058 2.00008C16.2115 2.03077 19.9153 4.61803 21.3675 8.50387C22.8199 12.3901 21.7187 16.7681 18.5997 19.5079C15.4812 22.2473 10.9929 22.7804 7.31788 20.848L7.27208 20.8319C7.26493 20.8278 7.26378 20.8242 7.26224 20.8194L6.57971 20.4332C6.4407 20.3763 6.28665 20.3671 6.19261 20.3909C5.4831 20.646 4.75798 20.8554 4.02167 21.018L3.88671 21.0343C3.07616 21.0523 2.66776 20.5263 2.66776 19.7609L2.6873 19.597C2.87136 18.8357 3.10204 18.0865 3.36458 17.3927C3.40531 17.2613 3.39175 17.1192 3.32147 16.9875L3.13765 16.6292C1.51288 13.5227 1.63541 9.79358 3.46059 6.8001C5.28554 3.80701 8.54635 1.98613 12.058 2.00008ZM12.0484 3.39463L11.7675 3.39903C8.85494 3.48236 6.17338 5.03121 4.65196 7.52649C3.08168 10.1019 2.97627 13.3099 4.37662 15.9874L4.55755 16.3402C4.79818 16.7905 4.84853 17.3183 4.68389 17.8451C4.42804 18.5246 4.21419 19.2192 4.04356 19.9249L4.138 19.557L4.53273 19.4541C4.66823 19.4168 4.80406 19.3775 4.9406 19.3361L5.35272 19.2055L5.77133 19.0617C6.21354 18.9399 6.6837 18.9681 7.14685 19.159C7.24408 19.2059 7.36471 19.271 7.51677 19.3569L7.93909 19.5993C7.94625 19.6012 7.95251 19.6029 7.95729 19.6042L7.94496 19.6026L8.23269 19.7468C11.2582 21.2076 14.8626 20.778 17.4587 18.6466L17.6788 18.4596C20.3626 16.1021 21.31 12.3357 20.0605 8.99235C18.8109 5.64861 15.6231 3.42182 12.0484 3.39463Z"
+                                        fill="#200E32" />
+                                </svg>
+                                <div class="feed-footer-icon-balao">6</div>
+                            </div>
+                        </div>
+                        <div class="feed-posts-footer-share" data-id="ID_DO_POST" onclick="sharePost(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none">
+                                <path
+                                    d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 6.65685 16.3431 8 18 8Z"
+                                    stroke="#200E32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M6 15C7.65685 15 9 13.6569 9 12C9 10.3431 7.65685 9 6 9C4.34315 9 3 10.3431 3 12C3 13.6569 4.34315 15 6 15Z"
+                                    stroke="#200E32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z"
+                                    stroke="#200E32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M8.58984 13.51L15.4198 17.49" stroke="#200E32" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M15.4098 6.51001L8.58984 10.49" stroke="#200E32" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="feed-laterais">
+            <div class="pb-2 mb-3 border-bottom">
+                <h2>As hashtags mais publicadas das últimas 72h</h2>
+            </div>
+
+            <ul>
+                <li class="feed-lateral-hashtags">
+                    <a href="#" class="feed-lateral-hashtags-content">
+                        <p class="feed-lateral-hashtags-nome">#plantas</p>
+                        <p class="feed-lateral-hashtags-funcao">Encontramos 7 vezes</p>
+                    </a>
+                </li>
+                <li class="feed-lateral-hashtags">
+                    <a href="#" class="feed-lateral-hashtags-content">
+                        <p class="feed-lateral-hashtags-nome">#plantas</p>
+                        <p class="feed-lateral-hashtags-funcao">Encontramos 7 vezes</p>
+                    </a>
+                </li>
+                <li class="feed-lateral-hashtags">
+                    <a href="#" class="feed-lateral-hashtags-content">
+                        <p class="feed-lateral-hashtags-nome">#plantas</p>
+                        <p class="feed-lateral-hashtags-funcao">Encontramos 7 vezes</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<script>
+    const textarea = document.getElementById('formTextarea');
+
+    textarea.addEventListener('input', function () {
+        this.style.height = 'auto';       // reset para calcular nova altura
+        this.style.height = this.scrollHeight + 'px'; // ajusta para conteúdo
+    });
+
+    const sharePost = (e) => {
+        const urlPage = window.location.origin;
+        sharePage(`${urlPage}/${e.dataset.id}`)
+    }
+    const sharePage = (url) => {
+        const data = {
+            title: "PlantCareHub | Aprenda, compartilhe e conecte-se",
+            text: "Organize seu jardim e faça parte de uma comunidade apaixonada por plantas.",
+            url: url,
+        };
+        if (navigator.canShare && navigator.canShare(data)) {
+            navigator.share(data);
+        } else {
+            console.log("Navegador não suporta");
+        }
+    };
+</script>

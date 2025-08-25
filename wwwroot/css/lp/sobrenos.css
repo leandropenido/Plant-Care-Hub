@@ -1,0 +1,98 @@
+#sobrenos .sobrenos-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+#sobrenos .title {
+  color: var(--color--gray-800);
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
+}
+#sobrenos .p-historia {
+  color: var(--color--gray-800);
+  text-align: justify;
+  font-size: 1.12rem;
+  font-weight: 500;
+  line-height: 32px;
+  padding: 1rem 20px;
+  margin: auto;
+}
+#sobrenos .equipe-content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10rem;
+  max-width: 1000px;
+}
+#sobrenos .equipe-box {
+  width: calc(33.3333333333% - 60px);
+  margin: 30px 30px;
+}
+#sobrenos .equipe-box img {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+#sobrenos .equipe-box p {
+  text-align: center;
+  padding-top: 0.8rem;
+}
+#sobrenos .equipe-box p:nth-of-type(1) {
+  color: var(--color--gray-700);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+#sobrenos .equipe-box p:nth-of-type(2) {
+  color: var(--color--gray-800);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+#sobrenos .equipe-box .network {
+  padding: 1rem 0;
+}
+#sobrenos .equipe-box .network ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-left: 0 !important;
+}
+#sobrenos .equipe-box .network ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(5, 168, 51, 0.1607843137);
+  transition: opacity 0.8 linear;
+}
+#sobrenos .equipe-box .network ul li a svg {
+  stroke: var(--color--green-light);
+}
+#sobrenos .equipe-box .network ul li a:hover {
+  opacity: 0.7;
+}
+@media screen and (max-width: 800px) {
+  #sobrenos .equipe-box {
+    width: calc(50% - 60px);
+  }
+}
+@media screen and (max-width: 550px) {
+  #sobrenos .equipe-content {
+    justify-content: center;
+  }
+  #sobrenos .equipe-box {
+    width: calc(100% - 60px);
+    max-width: 300px;
+  }
+}/*# sourceMappingURL=sobrenos.css.map */

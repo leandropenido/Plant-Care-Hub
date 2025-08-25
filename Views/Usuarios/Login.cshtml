@@ -1,0 +1,145 @@
+﻿@model plant_care_hub.Models.User
+
+@{
+    ViewData["Title"] = "Login";
+}
+<div id="login">
+    <div class="login-content">
+        <div class="inner">
+            <h1>
+                <!-- Ícone LogIn -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="#efcf3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-log-in-icon lucide-log-in">
+                    <path d="m10 17 5-5-5-5" />
+                    <path d="M15 12H3" />
+                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                </svg>
+                <span>Bem vindo de volta</span>
+            </h1>
+            <p class="subtitle">Faça login na sua conta</p>
+            <form id="loginForm" asp-action="Login">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div>
+                    <label asp-for="Email">E-mail</label>
+                    <div class="input-group">
+                        <!-- Ícone Mail -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#dcdcdc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-mail-icon lucide-mail">
+                            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                        </svg>
+                        <input type="email" id="email" asp-for="Email" placeholder="Digite seu e-mail"
+                            autocomplete="email" required />
+                    </div>
+                    <span asp-validation-for="Email" class="text-danger msg-erro"></span>
+                </div>
+
+                <div>
+                    <label asp-for="Password">Senha</label>
+                    <div class="input-group password-wrapper">
+                        <!-- Ícone Lock -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#dcdcdc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-lock-icon lucide-lock">
+                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                        <input asp-for="Password" type="password" id="password" placeholder="Digite sua senha"
+                            autocomplete="current-password" required />
+
+                        <svg id="togglePassword" class="toggle-password" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                        <svg id="togglePasswordOff" style="display: none;" class="toggle-password"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49" />
+                            <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" />
+                            <path
+                                d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" />
+                            <path d="m2 2 20 20" />
+                        </svg>
+                    </div>
+                    <span asp-validation-for="Password" class="text-danger msg-erro"></span>
+                </div>
+                <div class="actions-auth">
+                    <div class="actions-link-checkbox">
+                        <input type="checkbox" name="lembrarsenha" id="lembrarsenha">
+                        <label for="lembrarsenha">Lembre-me</label>
+                    </div>
+                    <a class="link-auth-esquecisenha" asp-controller="Usuarios" asp-action="Create">Esqueci minha senha</a>
+                </div>
+                <button type="submit" id="submitBtn" asp-controller="Usuarios" asp-action="Login">Entrar agora</button>
+
+                <a class="link-auth" asp-controller="Usuarios" asp-action="Create">Não tem uma conta? <span>Cadastre-se
+                        gratuitamente hoje</span></a>
+
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    const passwordInput = document.getElementById('password');
+    const togglePassword = document.getElementById('togglePassword');
+    const togglePasswordOff = document.getElementById('togglePasswordOff');
+    const submitBtn = document.getElementById('submitBtn');
+    const form = document.getElementById('loginForm');
+
+    let viewingPassword = false;
+
+    togglePassword.addEventListener('click', () => {
+        viewingPassword = true;
+        passwordInput.type = 'text';
+        togglePassword.style.display = 'none';
+        togglePasswordOff.style.display = 'block';
+    });
+
+    togglePasswordOff.addEventListener('click', () => {
+        viewingPassword = false;
+        passwordInput.type = 'password';
+        togglePassword.style.display = 'block';
+        togglePasswordOff.style.display = 'none';
+    });
+
+    // Exemplo simples de bloqueio do botão no submit e mostrar "Validando..."
+    form.addEventListener('submit', e => {
+       // e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.textContent = '';
+
+        // Criar spinner SVG inline
+        const spinner = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        spinner.setAttribute('width', '20');
+        spinner.setAttribute('height', '20');
+        spinner.setAttribute('viewBox', '0 0 1792 1792');
+        spinner.setAttribute('fill', 'currentColor');
+        spinner.classList.add('spinner');
+        spinner.style.marginRight = '8px';
+
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', 'M526 1394q0 53-37.5 90.5t-90.5 37.5q-52 0-90-38t-38-90q0-53 37.5-90.5t90.5-37.5 90.5 37.5 37.5 90.5zm498 206q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-704-704q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm1202 498q0 52-38 90t-90 38q-53 0-90.5-37.5t-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-964-996q0 66-47 113t-113 47-113-47-47-113 47-113 113-47 113 47 47 113zm1170 498q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-640-704q0 80-56 136t-136 56-136-56-56-136 56-136 136-56 136 56 56 136zm530 206q0 93-66 158.5t-158 65.5q-93 0-158.5-65.5t-65.5-158.5q0-92 65.5-158t158.5-66q92 0 158 66t66 158z');
+
+        spinner.appendChild(path);
+
+        submitBtn.appendChild(spinner);
+        submitBtn.appendChild(document.createTextNode('Validando...'));
+
+        // Simular delay para teste (2s)
+        setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Entrar agora';
+        }, 2000);
+    });
+</script>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

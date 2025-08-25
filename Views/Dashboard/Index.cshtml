@@ -1,0 +1,570 @@
+﻿@model plant_care_hub.Models.ViewModels.DashboardViewModel
+
+@{
+	Layout = "~/Views/Shared/_LayoutDasboard.cshtml";
+	ViewData["Title"] = "Aprenda, compartilhe e conecte-se";
+	ViewData["page_name"] = "index";
+}
+<main>
+	@if (TempData["SuccessMessage"] != null)
+	{
+		<div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+			@TempData["SuccessMessage"]
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	}
+	<div class="top-section">
+		<div class="container py-3" style="width: 72%;">
+			<div class="row text-start">
+				<div class="col">
+					<h2 class="text-success">Dashboard das plantas</h2>
+				</div>
+			</div>
+		</div>
+		<div class="container text-center py-2">
+			<div class="row justify-content-center">
+
+				<div class="col-3 me-4"
+					style="border:1px solid; border-radius: 1rem;border-color:rgba(0,0,0,0.2);padding:10px;">
+					<h5>Status das plantas</h5>
+					<canvas id="plant-chart-1" width="200px" height="200px"></canvas>
+
+					<div class="container text-start" style="font-size: .8rem;">
+
+						<p class="text-warning" style="font-size: 1rem;">Total de plantas: @ViewBag.TotalPlants</p>
+						<div class="col  mb-2">
+							<span class="bg-success d-inline-flex justify-content-center align-items-center text-light"
+								style="width: 25px; height:25px;border-radius:.6rem;border:none;">a</span>
+							<span>Saudáveis</span>
+						</div>
+						<div class="col mb-2">
+							<span class="bg-warning d-inline-flex justify-content-center align-items-center text-light"
+								style="width: 25px; height:25px;border-radius:.6rem;border:none;">x</span>
+							<span>Precisando de Atenção</span>
+						</div>
+						<div class="col mb-2">
+							<span class="bg-danger d-inline-flex justify-content-center align-items-center text-light"
+								style="width: 25px; height:25px;border-radius:.6rem;border:none;">o</span>
+							<span>Em Risco</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-6" style="border:1px solid; border-radius: 1rem;border-color:rgba(0,0,0,0.2);padding:10px;">
+					<div>
+						<h5>Monitoramento</h5>
+
+						<canvas id="plant-chart-2" width="550px" height="320px"></canvas>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="below-section">
+		<div>
+
+
+			<div class="container-fluid mt-5 mb-3" style="width:70%;">
+				<div class="d-flex justify-content-between align-items-center">
+
+					<h3 class="text-success">Gerenciamento de plantas</h3>
+
+					<div class="d-flex gap-3">
+						<button class="btn btn-success open-modal-add"><i class="bi bi-plus"></i> Adicionar nova
+							planta</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container py-5" style="width:70%;">
+			<div class="row justify-content-center">
+				<div class="card-group">
+					<div class="row row-cols-1 row-cols-md-4 gx-4">
+
+						@foreach (var plant in Model.Plants)
+						{
+							<div class="col">
+								<div class="card">
+									<img src="@plant.Foto" class="card-img-top">
+									<div class="card-body">
+										<h5 class="card-title">@plant.Nome</h5>
+										<p class="card-text">@plant.PlantSpecies.Name</p>
+										<button class="btn btn-success open-modal-edit" data-plant-id="@plant.Id"
+											style="width:100%;">Atualizar Cuidados</button>
+										<a asp-action="Delete" asp-route-id="@plant.Id" class="btn btn-outline-danger mt-2 delete-plant"
+											style="width:100%;"><i class="bi bi-trash"></i> Deletar
+											Planta</a>
+									</div>
+								</div>
+							</div>
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="modalTask" class="modal">
+		<div class="modalBody">
+			<header>
+				<span class="close-modal">&times;</span>
+				<h3 class="text-success">Sua planta</h3>
+			</header>
+			<form asp-action="SavePlant" asp-controller="Dashboard" method="post" enctype="multipart/form-data">
+				<input asp-for="NewPlant.Id" type="hidden" />
+				<div class="p-2 ">
+					<div class="pb-2">
+						<label asp-for="NewPlant.Foto"></label>
+						<br>
+						<input asp-for="NewPlant.UploadedFoto" type="file" accept=".png,.jpg,.jpeg" style="width:100%;">
+						<span asp-validation-for="NewPlant.UploadedFoto" class="text-danger"></span>
+					</div>
+					<div>
+						<label asp-for="NewPlant.Nome"></label>
+						<br>
+						<input asp-for="NewPlant.Nome" type="text" class="plant-name" style="width:100%;" />
+					</div>
+
+					<div class="pt-4 pb-2">
+						<label asp-for="NewPlant.Especie"></label>
+						<br>
+						<select asp-for="NewPlant.Especie" class="plant-description" asp-items="ViewBag.Especie">
+							<option value="">Selecione a Espécie</option>
+						</select>
+					</div>
+
+					<div class="p-2">
+						<button type="submit" class="create-bttn">Adicionar planta</button>
+						<button type="button" class="cancel-bttn">Cancelar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+	@if (Model.PlantToDelete != null && Model.ShowDeleteConfirmation)
+	{
+		<div id="deleteConfirmModal" class="modal" style="display:block;">
+			<div class="modalBody">
+				<header>
+
+					<h3 class="text-danger">Confirmar Exclusão</h3>
+				</header>
+				<p>Tem certeza que deseja excluir a planta <strong>@Model.PlantToDelete?.Nome</strong></p>
+				<p class="text-danger">Esta ação não pode ser desfeita.</p>
+
+				<form asp-action="Delete" asp-controller="Dashboard" method="post">
+					<input type="hidden" asp-for="PlantToDelete.Id" />
+					<input type="submit" value="Deletar" class="btn btn-danger">
+					<button type="button" class="btn btn-secondary close-delete-modal">Cancelar</button>
+				</form>
+			</div>
+		</div>
+	}
+
+</main>
+
+<style>
+	#modalTask h3 {
+		line-height: 1.2;
+		margin-bottom: 1.5rem;
+	}
+
+	#modalTask button {
+		cursor: pointer;
+		outline: 0;
+		display: inline-block;
+		font-weight: 400;
+		line-height: 1.5;
+		text-align: center;
+		background-color: transparent;
+		border: 1px solid transparent;
+		padding: 6px 12px;
+		font-size: 0.75rem;
+		border-radius: .25rem;
+		transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+		color: #555;
+		border-color: #555;
+	}
+
+	#modalTask button:hover {
+		color: #555;
+		background-color: #DEE2E6;
+		border-color: #DEE2E6;
+	}
+
+	#modalTask button:disabled {
+		color: #DEE2E6;
+		background-color: transparent;
+		border-color: #DEE2E6;
+	}
+
+
+	input,
+	select {
+		padding: 6px 12px;
+		font-size: 1rem;
+		font-weight: 300;
+		line-height: 1.2;
+		background-color: #fff;
+		background-clip: padding-box;
+		border: 1px solid #DEE2E6;
+		border-radius: 4px;
+		transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	}
+
+	input:focus {
+		color: #555;
+		background-color: #fff;
+		outline: 0;
+		box-shadow: 0 0 0 0.25rem rgb(13 110 253 25%);
+	}
+
+	.modal {
+		display: none;
+		position: fixed;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		width: 100vw;
+		height: 100vh;
+		overflow: auto;
+		background-color: rgba(0, 0, 0, 0.4);
+	}
+
+	.modalBody header {
+		margin-top: 0;
+	}
+
+	.modalBody {
+		background-color: #fefefe;
+		margin: 10% auto;
+		padding: 10px 40px;
+		border: 1px solid #888;
+		width: 40rem;
+		height: 30rem;
+		min-width: 50rem;
+		min-height: 40rem;
+
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		animation-name: animacao;
+		animation-duration: 2s
+	}
+
+	@@keyframes animacao {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	.close-modal {
+		color: #aaaaaa;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+		margin-top: -1rem;
+	}
+
+	.close-modal:hover,
+	.close-modal:focus {
+		color: #000;
+		text-decoration: none;
+		cursor: pointer;
+	}
+</style>
+
+
+@section Scripts
+{
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	@{
+
+		var monthlyCounts = ViewBag.MonthlyPlantsCount as int[];
+		var jsonMonthlyCounts = monthlyCounts != null
+		? System.Text.Json.JsonSerializer.Serialize<int[]>(monthlyCounts)
+		: "[]";
+
+	}
+
+	<script>
+
+		document.addEventListener('DOMContentLoaded', () => {
+
+		});
+
+		var plantsData = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Plants));
+		function plantChart1() {
+
+			let numberOfHealthy = @ViewBag.Healthy;
+			let numberOfSick = @ViewBag.Sick;
+			let numNeedAttention = @ViewBag.NeedsAttention;
+			let totalOfPlants = @ViewBag.TotalPlants;
+
+
+
+			let canvas = document.getElementById('plant-chart-1');
+			let ctx = canvas.getContext('2d');
+			let healthyPlants = numberOfHealthy ? numberOfHealthy + 1 : 1;
+			let needCarePlants = numNeedAttention ? numNeedAttention + 1 : 1;
+			let unhealthyPlants = numberOfSick ? numberOfSick + 1 : 1;
+			let healthyPlantChart = Math.ceil(180 * healthyPlants / 14);
+			let needCarePlantChart = Math.ceil(180 * needCarePlants / 14);
+			let unhealthyPlantChart = Math.ceil(180 * unhealthyPlants / 14);
+
+			ctx.clearRect(0, 0, 200, 200);
+			ctx.translate(50, 195);
+			ctx.rotate(-Math.PI / 2);
+			ctx.lineWidth = 40;
+
+			ctx.save();
+			ctx.rotate(Math.PI / 2);
+			ctx.font = '16px Poppins';
+			ctx.fillStyle = 'black';
+			ctx.fillText(numberOfHealthy, -5, -healthyPlantChart - 5);
+			ctx.restore();
+
+			ctx.save();
+			ctx.beginPath();
+			ctx.strokeStyle = '#198754';
+			ctx.moveTo(healthyPlantChart, 0);
+			ctx.lineTo(0, 0);
+			ctx.stroke();
+
+			ctx.save();
+			ctx.beginPath();
+			ctx.strokeStyle = '#ffc107';
+			ctx.translate(0, 50);
+			ctx.moveTo(needCarePlantChart, 0);
+			ctx.lineTo(0, 0);
+			ctx.stroke();
+
+			ctx.save();
+			ctx.rotate(Math.PI / 2);
+			ctx.font = '16px Poppins';
+			ctx.fillStyle = 'black';
+			ctx.fillText(numNeedAttention, -5, -needCarePlantChart - 5);
+			ctx.restore();
+
+			ctx.save();
+			ctx.beginPath();
+			ctx.strokeStyle = '#dc3545';
+			ctx.translate(0, 50);
+			ctx.moveTo(unhealthyPlantChart, 0);
+			ctx.lineTo(0, 0);
+			ctx.stroke();
+
+			ctx.save();
+			ctx.rotate(Math.PI / 2);
+			ctx.font = '16px Poppins';
+			ctx.fillStyle = 'black';
+			ctx.fillText(numberOfSick, -5, -unhealthyPlantChart - 5);
+			ctx.restore();
+
+
+		}
+		plantChart1();
+
+		function plantChart2() {
+			let canvas = document.getElementById('plant-chart-2');
+			let ctx = canvas.getContext('2d');
+			var monthlyCounts = @Html.Raw(jsonMonthlyCounts);
+			let morePlants = monthlyCounts.reduce((maxIndex, curr, index, arr) => curr > arr[maxIndex] ? index : maxIndex, 0);
+			let registeredPlants = 10;
+			let unregisteredPlants = 2;
+			let registeredPlantChart = Math.ceil(280 * registeredPlants / 14);
+			let unregisteredPlantChart = Math.ceil(280 * unregisteredPlants / 14);
+
+			let monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+			let numberOfPlants = monthlyCounts[morePlants];
+
+			ctx.clearRect(0, 0, 550, 320);
+			ctx.translate(30, 280);
+			ctx.rotate(-Math.PI / 2);
+			ctx.lineWidth = 30;
+
+
+			for (let i = 0; i < 12; i++) {
+
+				ctx.beginPath();
+				ctx.strokeStyle = 'rgba(255,222,136, 0.25)';
+				ctx.translate(0, i === 0 ? 0 : 40);
+				ctx.moveTo(unregisteredPlantChart, 0);
+				ctx.lineTo(0, 0);
+				ctx.stroke();
+
+				ctx.save();
+				ctx.rotate(Math.PI / 2);
+				ctx.font = '15px Poppins';
+				ctx.fillStyle = 'black';
+				ctx.fillText(monthArr[i], -14, 20);
+				ctx.restore();
+
+				if (i === morePlants && morePlants !== 0) {
+					ctx.save();
+					ctx.beginPath();
+					ctx.strokeStyle = 'rgba(255,222,136,1)';
+					ctx.translate(0, 40);
+					ctx.moveTo(registeredPlantChart, 0);
+					ctx.lineTo(0, 0);
+					ctx.stroke();
+
+
+					ctx.save();
+					ctx.rotate(Math.PI / 2);
+
+
+					ctx.fillStyle = "#000";
+					ctx.rotate(Math.PI / 0.5)
+					ctx.fillRect(-80, -registeredPlantChart - 45, 150, 25)
+					ctx.font = "bold 12px Arial";
+					ctx.fillStyle = "#fff";
+					ctx.textBaseline = "middle";
+					ctx.fillText(`${numberOfPlants} ${numberOfPlants == 1 ? 'Planta cadastrada' : 'Plantas cadastradas'}`, -70, -registeredPlantChart - 30);
+					ctx.restore();
+
+					ctx.beginPath();
+					ctx.strokeStyle = '#000';
+					ctx.lineWidth = 10;
+					ctx.lineCap = 'round';
+					ctx.moveTo(219, -10);
+					ctx.lineTo(206, 1);
+					ctx.stroke();
+					ctx.restore();
+
+
+				}
+			}
+
+		}
+		plantChart2();
+
+
+		function showDeleteModal() {
+			const deleteModal = document.getElementById('deleteConfirmModal');
+			const closeDeleteModalButton = document.querySelector('.close-delete-modal');
+			const cancelDeleteButton = deleteModal ? deleteModal.querySelector('.btn-secondary') : null;
+
+
+			if (!deleteModal) return;
+
+			deleteModal.style.display = 'block';
+
+			const hideDeleteModal = () => {
+				deleteModal.style.display = 'none';
+			}
+			if (closeDeleteModalButton) {
+				closeDeleteModalButton.onclick = hideDeleteModal;
+			}
+			if (cancelDeleteButton) {
+				cancelDeleteButton.onclick = hideDeleteModal;
+			}
+			window.onclick = function (event) {
+				if (event.target == deleteModal) {
+					hideDeleteModal();
+				}
+			};
+
+		}
+		document.addEventListener('DOMContentLoaded', () => {
+			const initializeVars = () => {
+				console.log('hello');
+				const modal = document.querySelector('#modalTask');
+				const plantName = modal.querySelector('.plant-name');
+				const plantDescription = modal.querySelector('.plant-description');
+				const createBttn = modal.querySelector('.create-bttn');
+				const cancelBttn = modal.querySelector('.cancel-bttn');
+				const closeModal = modal.querySelector('.close-modal');
+				const plantIdInput = modal.querySelector('input[name="NewPlant.Id"]');
+				const plantFotoInput = modal.querySelector('input[name="NewPlant.UploadedFoto"]');
+
+				return { modal, plantName, plantDescription, createBttn, cancelBttn, closeModal, plantIdInput, plantFotoInput };
+			}
+			const elements = initializeVars();
+
+			const { modal, plantName, plantDescription, createBttn, cancelBttn, closeModal, plantIdInput, plantFotoInput } = elements;
+
+			const resetModalForAdd = () => {
+				plantIdInput.value = '';
+				plantName.value = '';
+				plantDescription.value = '';
+				plantFotoInput.value = '';
+				createBttn.textContent = 'Adicionar Planta';
+				createBttn.disabled = true;
+			};
+
+			const openModalForEdit = (plant) => {
+				plantIdInput.value = plant.Id;
+				plantName.value = plant.Nome;
+				plantDescription.value = plant.Especie;
+				createBttn.textContent = 'Salvar Alterações';
+				createBttn.disabled = false;
+			};
+
+			const showModal = () => {
+				modal.style.display = 'block';
+				plantName.focus();
+			};
+
+			document.querySelector('.open-modal-add').addEventListener('click', () => {
+				resetModalForAdd();
+				showModal();
+			});
+
+			const handleModalOpen = (e) => {
+				const isAddBttn = e.currentTarget.classList.contains('open-modal-add');
+
+				if (isAddBttn) {
+					resetModalForAdd();
+				} else {
+					const plantId = parseInt(e.currentTarget.getAttribute('data-plant-id'));
+					const plant = plantsData.find(p => p.Id === plantId);
+
+					if (plant) {
+						openModalForEdit(plant);
+					} else {
+						resetModalForAdd();
+					}
+				}
+				showModal();
+			};
+
+
+			const allowCreation = () => {
+				if (
+					plantName.value.length > 0
+					&& plantDescription.value
+				) {
+					createBttn.disabled = false;
+				} else {
+					createBttn.disabled = true;
+				}
+			};
+
+			plantName.onkeyup = allowCreation;
+			plantDescription.onchange = allowCreation;
+
+			createBttn.onclick = () => modal.querySelector('form').submit();
+			cancelBttn.onclick = () => modal.style.display = "none";
+			closeModal.onclick = () => modal.style.display = "none";
+
+			document.querySelector('.open-modal-add').addEventListener('click', handleModalOpen);
+
+			document.querySelector('.open-modal-edit').addEventListener('click', handleModalOpen);
+
+			document.querySelectorAll('.delete-plant').forEach(button => {
+				button.addEventListener('click', showDeleteModal);
+			});
+
+		});
+	</script>
+}

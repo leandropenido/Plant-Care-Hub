@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --color--green-light: #05a833;
+  --color--green-dark: #0a4641;
+  --color--yellow-light: #f9ffdd;
+  --color--yellow-dark: #ffde88;
+  --color--yellow-black: #efcf3b;
+  --color--white: #ffffff;
+  --color--gray-100: #efefef;
+  --color--gray-200: #dcdcdc;
+  --color--gray-300: #bdbdbd;
+  --color--gray-400: #989898;
+  --color--gray-500: #7c7c7c;
+  --color--gray-550: #737373;
+  --color--gray-600: #656565;
+  --color--gray-700: #525252;
+  --color--gray-800: #464646;
+  --color--gray-900: #3d3d3d;
+  --color--gray-950: #292929;
+  --color--gray-960: #2d2d2d;
+  --color--black-50: #f6f6f6;
+  --color--black-100: #e7e7e7;
+  --color--black-200: #d1d1d1;
+  --color--black-300: #b0b0b0;
+  --color--black-400: #888888;
+  --color--black-500: #6d6d6d;
+  --color--black-600: #5d5d5d;
+  --color--black-700: #4f4f4f;
+  --color--black-800: #454545;
+  --color--black-900: #3d3d3d;
+  --color--black-950: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none !important;
+  list-style: none !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.max-w-\[1125px\] {
+  max-width: 1125px;
+  margin: auto;
+}
+
+.modal_background {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  filter: brightness(0.5) contrast(0.5) grayscale(100%);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+}
+
+footer {
+  background-color: var(--color--green-dark);
+  padding: 40px 20px;
+  margin-top: 5rem;
+}
+footer .footer-imagens {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+  gap: 20px;
+}
+footer .footer-developer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+footer .footer-developer span {
+  color: var(--color--white);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+@media screen and (max-width: 400px) {
+  footer .footer-imagens {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  footer .footer-developer {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}/*# sourceMappingURL=site.css.map */

@@ -1,0 +1,259 @@
+#perfil .perfil-content {
+  padding: 1rem 20px;
+}
+#perfil .profile-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+#perfil .profile-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px;
+}
+@media screen and (max-width: 520px) {
+  #perfil .profile-header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+#perfil .profile-picture {
+  min-width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden; /* For potential img tag */
+}
+#perfil .profile-picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+#perfil .profile-flowwers {
+  width: calc(100% - 100px);
+}
+@media screen and (max-width: 480px) {
+  #perfil .profile-flowwers {
+    width: 100%;
+  }
+}
+#perfil .profile-stats {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  color: var(--color--gray-800);
+}
+@media screen and (max-width: 480px) {
+  #perfil .profile-stats {
+    flex-wrap: wrap;
+    gap: 5px 20px;
+    justify-content: center;
+  }
+}
+#perfil .profile-stats p {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 630px) {
+  #perfil .profile-stats p {
+    display: block;
+    text-align: center;
+  }
+}
+#perfil .profile-stats span {
+  font-weight: 500;
+  color: var(--color--yellow-black);
+}
+#perfil .follow-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.5 linear;
+}
+#perfil .follow-button svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+#perfil .follow-button:hover {
+  opacity: 0.9;
+}
+@media screen and (max-width: 520px) {
+  #perfil .follow-button {
+    margin: 0 auto;
+  }
+}
+#perfil .follow-button .user-info {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+#perfil .user-info h1 {
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--color--gray-800);
+}
+#perfil .user-info p {
+  font-size: 18px;
+  color: var(--color--gray-600);
+  margin-bottom: 10px;
+}
+#perfil .user-info a {
+  color: #1d9bf0;
+  text-decoration: none;
+  font-size: 16px;
+  display: flex; /* Changed from inline to align icon */
+  align-items: center;
+  font-weight: 300;
+  transition: opacity 0.6 linear;
+}
+#perfil .user-info a:hover {
+  opacity: 0.7;
+}
+#perfil .user-info a svg {
+  margin-right: 5px;
+}
+#perfil .user-info a:hover {
+  text-decoration: underline;
+}
+#perfil .plant-status {
+  display: flex;
+  width: 100%;
+  gap: 20px 40px;
+  border: 1px solid var(--color--gray-200);
+  border-radius: 10px;
+  padding: 40px 30px;
+  margin: 30px auto;
+}
+@media screen and (max-width: 500px) {
+  #perfil .plant-status {
+    flex-wrap: wrap;
+  }
+}
+#perfil .plant-grafico,
+#perfil .chart-legend {
+  width: 50%;
+}
+@media screen and (max-width: 500px) {
+  #perfil .plant-grafico,
+  #perfil .chart-legend {
+    width: 100%;
+  }
+}
+#perfil .plant-grafico h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: var(--color--gray-600);
+}
+#perfil .plant-status .total-plants {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color--gray-600);
+  margin-bottom: 20px;
+}
+#perfil .chart-area {
+  display: flex;
+  align-items: flex-end;
+  height: 120px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  gap: 15px;
+  justify-content: space-around;
+}
+#perfil .bar {
+  flex-grow: 1; /* Allow bars to take up space */
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  height: 100%;
+}
+#perfil .bar .value {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: var(--color--gray-500);
+  margin-bottom: 2px;
+}
+#perfil .bar-inner {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+}
+#perfil .bar .label {
+  font-size: 0.8em;
+  color: var(--color--gray-300);
+  margin-top: 5px;
+}
+#perfil .bar.healthy .bar-inner {
+  background-color: #05a833;
+}
+#perfil .bar.needs-attention .bar-inner {
+  background-color: #ffda93;
+}
+#perfil .bar.at-risk .bar-inner {
+  background-color: #ff7576;
+}
+#perfil .chart-legend {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--color--gray-500);
+  font-weight: 500;
+}
+#perfil .legend-plants h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--color--yellow-black);
+}
+#perfil .legend-items {
+  margin-bottom: 1rem;
+}
+#perfil .legend-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+#perfil .legend-color {
+  width: 22px;
+  height: 22px;
+  color: var(--color--white) !important;
+  font-weight: 400 !important;
+  border-radius: 5px;
+  margin-right: 8px;
+  display: inline-block;
+}
+#perfil .legend-color.healthy-bg {
+  background-color: #05a833;
+}
+#perfil .legend-color.needs-attention-bg {
+  background-color: #ffda93;
+}
+#perfil .legend-color.at-risk-bg {
+  background-color: #ff7576;
+}
+#perfil .legend-item span:first-of-type {
+  font-weight: bold;
+  min-width: 15px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 5px;
+  color: var(--color--gray-500);
+}/*# sourceMappingURL=perfil.css.map */

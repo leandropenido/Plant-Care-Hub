@@ -1,0 +1,271 @@
+@import url("/css/site.css");
+@import url("./index/index.css");
+@import url("./feed/feed.css");
+@import url("./library/library.css");
+@import url("./forum/forum.css");
+@import url("./perfil/perfil.css");
+@import url("./perfil/perfiledit.css");
+
+header .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 20px;
+}
+header .header-diretorios {
+  display: flex;
+  justify-content: space-between;
+}
+header .header-diretorios li a {
+  color: var(--color--gray-550);
+  font-size: 14px;
+  font-weight: bold;
+}
+header .logo-header-nav-1 {
+  display: none;
+}
+@media screen and (max-width: 500px) {
+  header .logo-header-nav-1 {
+    display: block;
+  }
+  header .logo-header-nav-2 {
+    display: none;
+  }
+}
+@media screen and (min-width: 871px) {
+  header .navbar-nav span,
+  header .none-desktop {
+    display: none;
+  }
+}
+header .navbar-nav li,
+header .nav-item-mobile li {
+  padding: 0 1rem;
+}
+header .navbar-nav li span,
+header .nav-item-mobile li span {
+  padding-left: 10px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+header .navbar-nav .nav-link,
+header .nav-item-mobile .nav-link {
+  position: relative;
+  cursor: pointer;
+}
+header .navbar-nav .nav-notificacao,
+header .nav-item-mobile .nav-notificacao {
+  position: absolute;
+  min-width: 18px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  min-height: 18px;
+  top: 0;
+  padding: 2px 6px;
+  right: -10px;
+  border-radius: 25px;
+  border: 2px solid #ffffff;
+  background: #ff1930;
+  color: #ffffff;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 400;
+}
+header .navbar-nav .nav-item-show,
+header .nav-item-mobile .nav-item-show {
+  position: relative;
+}
+header .navbar-nav .nav-item-show::after,
+header .nav-item-mobile .nav-item-show::after {
+  content: "";
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  display: block;
+  border-radius: 4px 4px 0px 0px;
+  background-color: var(--color--green-light);
+  width: 100%;
+  height: 5px;
+}
+header .header-login {
+  display: inline-block;
+  color: var(--color--green-light);
+  text-decoration: none;
+  padding: 0.6rem 2.3rem;
+  border: 1px solid var(--color--green-light);
+  border-radius: 50px;
+  font-size: 17px;
+  transition: all linear 0.2s;
+}
+header .header-login:hover {
+  background-color: var(--color--green-light);
+  color: var(--color--white);
+}
+header .header-nav_mobile {
+  display: none;
+}
+header .hero-action-perfil {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header .hero-action-perfil p {
+  margin-bottom: 0;
+}
+header .hero-action-perfil .hero-action-perfil-nome {
+  color: var(--color--gray-950);
+  font-size: 16px;
+  font-weight: 500;
+}
+header .hero-action-perfil .hero-action-perfil-funcao {
+  color: var(--color--gray-950);
+  font-size: 11px;
+  font-weight: 300;
+}
+header .hero-action-perfil .hero-action-perfil-settings {
+  margin-top: -0.7rem;
+  position: relative;
+}
+header .hero-action-perfil .hero-action-perfil-settings svg {
+  cursor: pointer;
+}
+header .hero-action-perfil .hero-action-perfil-settings-content {
+  position: absolute;
+  visibility: hidden;
+  right: 0;
+  width: 250px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 14px 9px 2px rgb(243, 243, 243);
+  border: 1px solid var(--color--black-50);
+}
+header .hero-action-perfil .hero-action-perfil-settings-content h2 {
+  font-size: 1.2rem;
+}
+header .hero-action-perfil .hero-action-perfil-settings-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+}
+header .hero-action-perfil .hero-action-perfil-settings-content li a {
+  display: flex;
+  gap: 5px;
+  border-radius: 7px;
+  background: var(--color--green-light);
+  padding: 10px 12px;
+  width: 100%;
+  margin-bottom: 10px;
+  max-width: 100%;
+  color: var(--color--white);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: opacity linear 0.8s;
+}
+header .hero-action-perfil .hero-action-perfil-settings-content li a:hover {
+  opacity: 0.7;
+}
+header .hero-action-perfil .hero-action-perfil-settings:hover .hero-action-perfil-settings-content {
+  visibility: visible !important;
+}
+header .hero-action-perfil img {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+header .hero-action-notificacao-settings {
+  position: relative;
+}
+header .hero-action-notificacao-settings svg {
+  cursor: pointer;
+}
+header .hero-action-notificacao-settings-content {
+  position: absolute;
+  visibility: hidden;
+  cursor: default;
+  right: 50%;
+  transform: translateX(50%);
+  width: 300px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 14px 9px 2px rgb(243, 243, 243);
+  border: 1px solid var(--color--black-50);
+}
+header .hero-action-notificacao-settings-content h2 {
+  font-size: 1.2rem;
+  color: var(--color--gray-950);
+}
+header .hero-action-notificacao-settings-content ul {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+}
+header .hero-action-notificacao-settings-content li a {
+  display: flex;
+  padding: 10px 0;
+  width: 100%;
+  margin-bottom: 10px;
+  color: var(--color--gray-950);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  transition: opacity linear 0.8s;
+}
+header .hero-action-notificacao-settings-content li a:hover {
+  opacity: 0.7;
+}
+header .hero-action-notificacao-settings:hover .hero-action-notificacao-settings-content {
+  visibility: visible !important;
+}
+@media screen and (max-width: 870px) {
+  header .hero-action-perfil-user,
+  header .none-mobile,
+  header .nav-item-show::after {
+    display: none !important;
+  }
+  header .header-nav_mobile {
+    display: block;
+  }
+  header .navbar-light .navbar-toggler {
+    display: inline-flex !important;
+  }
+  header .header-logonav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .header-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    width: 300px;
+    height: 100%;
+    padding: 2rem 20px;
+    background-color: var(--color--black-50);
+    z-index: 99;
+    transition: transform linear 0.2s;
+  }
+  header .header-nav_show {
+    transform: translateX(0%);
+  }
+  header .header-nav ul {
+    flex-direction: column !important;
+  }
+  header .header-nav ul li {
+    padding: 0.3rem 0;
+  }
+  header .header-nav .header-login {
+    text-align: center;
+  }
+  header .navbar-nav {
+    padding: 2rem 0;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .header-nav_mobile {
+    display: block;
+  }
+}/*# sourceMappingURL=dashboard.css.map */

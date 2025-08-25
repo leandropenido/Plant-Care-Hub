@@ -1,0 +1,131 @@
+﻿@model plant_care_hub.Models.ViewModels.PerfilViewModel
+@{
+    Layout = "~/Views/Shared/_LayoutDasboard.cshtml";
+    ViewData["Title"] = "Aprenda, compartilhe e conecte-se";
+    ViewData["page_name"] = "perfil";
+}
+
+<section id="perfil">
+    <div class="perfil-content max-w-[1125px]">
+        <div class="profile-container">
+            <header class="profile-header">
+                <div class="profile-picture">
+                    <img src="@(!string.IsNullOrEmpty(Model.User.Photo) ? Model.User.Photo : "/img/users/default.png")" alt="">
+                </div>
+                <div class="profile-flowwers">
+                    <div class="profile-stats">
+                        <p><span>@Model.FollowingNumber</span> Seguindo</p>
+                        <p><span>@Model.FollowersNumber</span> Seguidores</p>
+                        <p><span>@Model.PostNumber</span> Postagens</p>
+                    </div>
+                    <button class="btn btn-success follow-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                            <g clip-path="url(#clip0_125_18)">
+                                <path d="M10.5 13.125V11.875C10.5 11.212 10.2366 10.5761 9.76777 10.1072C9.29893 9.63839 8.66304 9.375 8 9.375H4.25C3.58696 9.375 2.95107 9.63839 2.48223 10.1072C2.01339 10.5761 1.75 11.212 1.75 11.875V13.125"
+                                      stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M6.125 6.875C7.50571 6.875 8.625 5.75571 8.625 4.375C8.625 2.99429 7.50571 1.875 6.125 1.875C4.74429 1.875 3.625 2.99429 3.625 4.375C3.625 5.75571 4.74429 6.875 6.125 6.875Z"
+                                      stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M12.375 5V8.75" stroke="white" stroke-width="2" stroke-linecap="round"
+                                      stroke-linejoin="round" />
+                                <path d="M14.25 6.875H10.5" stroke="white" stroke-width="2" stroke-linecap="round"
+                                      stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_125_18">
+                                    <rect width="15" height="15" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        Seguir
+                    </button>
+                </div>
+            </header>
+
+            <section class="user-info">
+                <h1>@Model.User.Name</h1>
+                <p>
+                    @Model.User.Bio
+                </p>
+                <a href="http://plantacarehub.com" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M15.3032 12.9462L14.1247 11.7677L15.3032 10.5892C16.9304 8.96208 16.9304 6.32388 15.3032 4.69669C13.6761 3.0695 11.0378 3.0695 9.41066 4.69669L8.23216 5.8752L7.05365 4.69669L8.23216 3.51818C10.5102 1.24012 14.2037 1.24012 16.4817 3.51818C18.7598 5.79623 18.7598 9.48966 16.4817 11.7677L15.3032 12.9462ZM12.9462 15.3033L11.7677 16.4818C9.48966 18.7598 5.79617 18.7598 3.51811 16.4818C1.24006 14.2037 1.24006 10.5102 3.51811 8.23223L4.69662 7.05371L5.87514 8.23223L4.69662 9.41074C3.06944 11.0379 3.06944 13.6761 4.69662 15.3033C6.32381 16.9305 8.962 16.9305 10.5892 15.3033L11.7677 14.1247L12.9462 15.3033ZM12.3569 6.46446L13.5355 7.64297L7.64291 13.5355L6.46439 12.357L12.3569 6.46446Z"
+                              fill="#72767A" />
+                    </svg>
+                    plantacarehub.com
+                </a>
+            </section>
+
+            <section class="plant-status">
+                <div class="plant-grafico">
+                    <div class="total-plants">
+                        <h2>Status das plantas</h2>
+                    </div>
+                    <div class="chart-area">
+                        <div class="bar healthy">
+                            <div class="value">@Model.PlantsHealth</div>
+                            @{
+                                var healthyPercent = 0;
+                                if (Model.PlantsNeedAttention != null && Model.TotalPlants > 0)
+                                {
+                                    healthyPercent = (int)Math.Round((Convert.ToDouble(Model.PlantsHealth) / Model.TotalPlants) * 100);
+                                    if (healthyPercent > 100) { healthyPercent = 100; }
+                                    if (healthyPercent < 0) { healthyPercent = 0; }
+                                }
+                            }
+                            <div class="bar-inner" style="height: @healthyPercent%;"></div>
+                            <div class="label">o</div>
+                        </div>
+                        <div class="bar needs-attention">
+                            <div class="value">@Model.PlantsNeedAttention</div>
+                                @{
+                                var needAttentionPercent = 0;
+                                if (Model.PlantsNeedAttention != null && Model.TotalPlants > 0)
+                                    {
+                                    needAttentionPercent = (int)Math.Round((Convert.ToDouble(Model.PlantsNeedAttention) / Model.TotalPlants) * 100);
+                                        if (needAttentionPercent > 100) { needAttentionPercent = 100; }
+                                        if (needAttentionPercent < 0) { needAttentionPercent = 0; }
+                                    }
+                                }
+                                <div class="bar-inner" style="height: @needAttentionPercent%;"></div>
+                                <div class="label">o</div>
+                        </div>
+                        <div class="bar at-risk">
+                                <div class="value">@Model.PlantsSick</div>
+                                @{
+                                    var sickPercent = 0;
+                                    if (Model.PlantsSick != null && Model.TotalPlants > 0)
+                                    {
+                                        sickPercent = (int)Math.Round((Convert.ToDouble(Model.PlantsSick) / Model.TotalPlants) * 100);
+                                        if (sickPercent > 100) { sickPercent = 100; }
+                                        if (sickPercent < 0) { sickPercent = 0; }
+                                    }
+                                }
+                                <div class="bar-inner" style="height: @sickPercent%;"></div>
+                                <div class="label">o</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-plants">
+                        <h2>Status das plantas</h2>
+                    </div>
+
+                    <div class="legend-items">
+                        <div class="legend-item">
+                            <span class="legend-color healthy-bg">a</span>
+                            Saudáveis
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color needs-attention-bg">x</span>
+                            Precisando de Atenção
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color at-risk-bg">o</span>
+                            Em Risco
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>

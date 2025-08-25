@@ -1,0 +1,173 @@
+@charset "UTF-8";
+#modificarsenha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  /* Spinner Animation */
+}
+#modificarsenha .modificarsenha-content {
+  background: #fff;
+  padding: 5rem 2.5rem;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 6px 6px 14px rgba(91, 91, 91, 0.04);
+  box-sizing: border-box;
+}
+@media screen and (max-width: 600px) {
+  #modificarsenha .modificarsenha-content {
+    padding: 3rem 20px;
+  }
+}
+#modificarsenha .inner {
+  max-width: 400px;
+  margin: 0 auto;
+}
+#modificarsenha h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color--gray-900);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.5rem 0;
+}
+#modificarsenha p.subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color--gray-960);
+  margin: 0 0 1.25rem 0;
+}
+#modificarsenha form {
+  width: 100%;
+}
+#modificarsenha label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color--gray-960);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+#modificarsenha .input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color--gray-100);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0 0.3rem 0;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+#modificarsenha .input-group:focus-within {
+  border-color: var(--color--yellow-black);
+  outline: 1px solid var(--color--yellow-black);
+  box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.3);
+}
+#modificarsenha .msg-erro {
+  display: block;
+  margin-bottom: 0.7rem;
+}
+#modificarsenha .input-group:focus-within svg {
+  stroke: var(--color--yellow-black);
+}
+#modificarsenha input:-webkit-autofill,
+#modificarsenha input:-webkit-autofill:hover,
+#modificarsenha input:-webkit-autofill:focus,
+#modificarsenha input:-webkit-autofill:active {
+  /* Define uma transição com um longo atraso */
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  /* Força a cor do texto para a desejada (ex: preto) */
+  -webkit-text-fill-color: #000 !important;
+  /* Usa um box-shadow grande para simular o fundo desejado.
+   Altere 'white' para a cor de fundo do seu input. */
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+#modificarsenha input[type=email],
+#modificarsenha input[type=password],
+#modificarsenha input[type=text] {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 0.7rem 0.5rem;
+  color: var(--color--gray-960);
+  background: transparent;
+  width: 90%;
+}
+#modificarsenha input::-moz-placeholder {
+  color: var(--color--green-dark);
+  -moz-transition: color 0.3s;
+  transition: color 0.3s;
+}
+#modificarsenha input::placeholder {
+  color: var(--color--green-dark);
+  transition: color 0.3s;
+}
+#modificarsenha .input-group:focus-within input::-moz-placeholder {
+  color: var(--color--yellow-black);
+}
+#modificarsenha .input-group:focus-within input::placeholder {
+  color: var(--color--yellow-black);
+}
+#modificarsenha .password-wrapper {
+  position: relative;
+}
+#modificarsenha .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  stroke: var(--color--gray-960);
+}
+#modificarsenha button[type=submit] {
+  margin-top: 1.25rem;
+  width: 100%;
+  background-color: var(--color--green-light);
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s;
+}
+#modificarsenha button[type=submit]:hover:not(:disabled) {
+  opacity: 0.85;
+}
+#modificarsenha button[type=submit]:disabled {
+  background-color: #475569;
+  cursor: not-allowed;
+}
+#modificarsenha .link-auth {
+  display: flex;
+  gap: 10px;
+  color: var(--color--gray-500);
+  text-align: center;
+  width: 250px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  font-size: 14px;
+}
+#modificarsenha .link-auth:hover {
+  opacity: 0.8;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+#modificarsenha .spinner {
+  margin-right: 0.5rem;
+  animation: spin 1s linear infinite;
+  fill: currentColor;
+}/*# sourceMappingURL=modificarsenha.css.map *//*# sourceMappingURL=modificarsenha.css.map */

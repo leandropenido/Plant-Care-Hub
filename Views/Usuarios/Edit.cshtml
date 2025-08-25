@@ -1,0 +1,150 @@
+﻿@using plant_care_hub.Constants
+@model plant_care_hub.Models.User
+
+@{
+    Layout = "~/Views/Shared/_LayoutDasboard.cshtml";
+    ViewData["Title"] = "Aprenda, compartilhe e conecte-se";
+    ViewData["page_name"] = "perfiledit";
+}
+<section id="perfil_edit">
+    <div class="perfil_edit-content max-w-[1125px]">
+        <div class="form-container">
+            <form id="profile-form" asp-action="Edit" enctype="multipart/form-data">
+                <input type="hidden" asp-for="Id" />
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <div class="profile-picture">
+                            <img id="profile-img" src="@(!string.IsNullOrEmpty(Model.Photo) ? Model.Photo : "/img/users/default.png")" alt="Foto de perfil" style="max-width: 300px;" />
+                        </div>
+                        <div class="profile-upload">
+                            <div class="file-input-wrapper">
+                                <input asp-for="UploadedPhoto" type="file" id="real-file-input" hidden="hidden" accept="image/*" onchange="mostrarPreview(this)" />
+                                <label for="real-file-input" id="custom-file-button">Escolha o arquivo</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-group-3">
+                    <label asp-for="Name" for="nome">Nome</label>
+                    <input asp-for="Name" type="text" id="Name" placeholder="Seu nome">
+                </div>
+
+                <div class="form-group form-group-3">
+                    <label for="link">Link</label>
+                    <div class="input-with-icon">
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                 fill="none">
+                                <path d="M15.3032 12.9463L14.1247 11.7678L15.3032 10.5893C16.9304 8.96214 16.9304 6.32394 15.3032 4.69675C13.6761 3.06956 11.0378 3.06956 9.41066 4.69675L8.23216 5.87526L7.05365 4.69675L8.23216 3.51824C10.5102 1.24018 14.2037 1.24018 16.4817 3.51824C18.7598 5.79629 18.7598 9.48972 16.4817 11.7678L15.3032 12.9463ZM12.9462 15.3034L11.7677 16.4819C9.48966 18.7599 5.79617 18.7599 3.51811 16.4819C1.24006 14.2038 1.24006 10.5103 3.51811 8.23229L4.69662 7.05377L5.87514 8.23229L4.69662 9.4108C3.06944 11.038 3.06944 13.6761 4.69662 15.3034C6.32381 16.9306 8.962 16.9306 10.5892 15.3034L11.7677 14.1248L12.9462 15.3034ZM12.3569 6.46452L13.5355 7.64303L7.64291 13.5356L6.46439 12.3571L12.3569 6.46452Z"
+                                      fill="#72767A" />
+                            </svg>
+                        </span>
+                        <input type="url" id="link" name="link" placeholder="WebSite">
+                    </div>
+                </div>
+
+                <div class="form-group form-group-3">
+                    <label for="telefone">Telefone</label>
+                    <div class="input-with-icon">
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                 fill="none">
+                                <g clip-path="url(#clip0_125_13)">
+                                    <path d="M19.4293 14.1329L15.0543 12.2579C14.8674 12.1783 14.6597 12.1615 14.4624 12.2101C14.2652 12.2587 14.089 12.3701 13.9605 12.5275L12.023 14.8947C8.98232 13.461 6.53524 11.0139 5.10156 7.97318L7.46875 6.03568C7.62644 5.90743 7.73804 5.7313 7.78668 5.53394C7.83531 5.33659 7.81832 5.12877 7.73828 4.94193L5.86328 0.566931C5.77543 0.365528 5.62007 0.201089 5.42397 0.10197C5.22787 0.00284967 5.00332 -0.0247385 4.78906 0.0239622L0.726562 0.961462C0.519988 1.00916 0.335682 1.12548 0.203725 1.29142C0.0717677 1.45736 -4.75863e-05 1.66312 2.36571e-08 1.87513C2.36571e-08 11.8947 8.12109 20.0001 18.125 20.0001C18.3371 20.0003 18.5429 19.9285 18.709 19.7965C18.875 19.6646 18.9913 19.4802 19.0391 19.2736L19.9766 15.2111C20.025 14.9958 19.9968 14.7703 19.8969 14.5736C19.797 14.3768 19.6317 14.221 19.4293 14.1329Z"
+                                          fill="#72767A" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_125_13">
+                                        <rect width="20" height="20" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </span>
+                        <input asp-for="PhoneNumber" type="tel" id="PhoneNumber" placeholder="WhatsApp">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="biografia">Biografia</label>
+                    <textarea asp-for="Bio" id="Bio" rows="5"
+                              placeholder="Biografia"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="save-button" id="btn-salvar" disabled>Salvar</button>
+             
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{
+        <script>
+            $(function () {
+                 const $form = $('#user-form');
+                 const $saveButton = $('#btn-salvar');
+                 const $imageInput = $('#real-file-input');
+
+                 // Guardar valores iniciais
+                 const original = {
+                     name: $('#Name').val(),
+                     bio: $('#Bio').val(),
+                     phone: $('#PhoneNumber').val(),
+                     file: null // Iremos comparar isso na mudança
+                 };
+
+                 let fileChanged = false;
+
+                 // Verifica se algo foi alterado
+                 function verificarMudancas() {
+                     const nameChanged = $('#Name').val() !== original.name;
+                     const bioChanged = $('#Bio').val() !== original.bio;
+                     const phoneChanged = $('#PhoneNumber').val() !== original.phone;
+
+                     if (nameChanged || bioChanged || phoneChanged || fileChanged) {
+                         $saveButton.prop('disabled', false);
+                     } else {
+                         $saveButton.prop('disabled', true);
+                     }
+                 }
+
+                 // Escuta mudanças em campos de texto
+                 $('#Name, #Bio, #PhoneNumber').on('input', verificarMudancas);
+
+                 // Escuta mudança na imagem
+                 $imageInput.on('change', function () {
+                     fileChanged = this.files.length > 0;
+                     verificarMudancas();
+
+                     // Atualiza a prévia
+                     if (fileChanged) {
+                         const reader = new FileReader();
+                         reader.onload = function (e) {
+                             $('#photo-preview').attr('src', e.target.result);
+                         };
+                         reader.readAsDataURL(this.files[0]);
+                     }
+                 });
+             });
+            function mostrarPreview(input) {
+                   const preview = document.getElementById('profile-img');
+
+                   if (input.files && input.files[0]) {
+                       const reader = new FileReader();
+
+                       reader.onload = function (e) {
+                           preview.src = e.target.result;
+                       };
+                       
+
+                       reader.readAsDataURL(input.files[0]);
+                   }
+               }
+
+        </script>
+
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+   }

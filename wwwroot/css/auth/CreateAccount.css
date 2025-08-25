@@ -1,0 +1,65 @@
+﻿#create_account .body {
+    background-color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#create_account .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+#create_account .form-box {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 600px;
+}
+
+    #create_account .form-box h2 {
+        margin-bottom: 10px;
+    }
+
+    #create_account .form-box p {
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+#create_account .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+    #create_account .form-row div {
+        flex: 1;
+    }
+
+#create_account .input.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#create_account .btn-register {
+    background-color: #049c44;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+    #create_account .btn-register:hover {
+        background-color: #037837;
+    }
+
+#create_account .text-danger {
+    color: red;
+    font-size: 12px;
+}

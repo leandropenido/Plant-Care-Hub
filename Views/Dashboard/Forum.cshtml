@@ -1,0 +1,152 @@
+﻿@model plant_care_hub.Models.ViewModels.DashboardViewModel
+
+@{
+	Layout = "~/Views/Shared/_LayoutDasboard.cshtml";
+	ViewData["Title"] = "Aprenda, compartilhe e conecte-se";
+	ViewData["page_name"] = "forum";
+}
+
+<main>
+	<div class="top-section">
+
+		<div class="container-fluid mt-5 mb-3" style="width:72%;">
+			<div class="d-flex justify-content-between align-items-center">
+
+				<h3 class="text-success">Fórum</h3>
+
+				<div class="d-flex gap-3">
+					<button id="add-new-plant" class="btn btn-success"><i class="bi bi-plus"></i> Adicionar novo
+						comentário</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="below-section">
+
+		<div class="d-flex flex-column">
+			<div class="p-2">
+				<div class="container-sm p-3 ps-4 container-box">
+					<a href="#" class="text-decoration-none text-reset">
+						<div class="topic-description text-center">
+							Pragas e Doenças
+						</div>
+						<div class="title pt-2">
+							<span class="fw-bold">Como identificar quando uma suculenta está doente?</span>
+						</div>
+						<div class="pt-2">
+							<i class="bi bi-chat-left"></i>
+							<span id="posts" class="fw-light" style="font-size: 0.9rem;">22 comentários</span>
+						</div>
+
+						<div class="pt-5">
+							<div class="d-flex justify-content-between">
+								<span class="fw-semibold"><i class="bi bi-person-circle pe-2"></i>Sibele Moreira</span>
+								<span class="fw-light"> 22 janeiro 2025</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="d-flex flex-column">
+			<div class="p-2">
+				<div class="container-sm p-3 ps-4 container-box">
+					<a href="#" class="text-decoration-none text-reset">
+						<div class="topic-description text-center">
+							Pragas e Doenças
+						</div>
+						<div class="title pt-2">
+							<span class="fw-bold">Como identificar quando uma suculenta está doente?</span>
+						</div>
+						<div class="pt-2">
+							<i class="bi bi-chat-left"></i>
+							<span id="posts" class="fw-light" style="font-size: 0.9rem;">22 comentários</span>
+						</div>
+
+						<div class="pt-5">
+							<div class="d-flex justify-content-between">
+								<span class="fw-semibold"><i class="bi bi-person-circle pe-2"></i>Sibele Moreira</span>
+								<span class="fw-light"> 22 janeiro 2025</span>
+							</div>
+						</div>
+
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="d-flex flex-column">
+			<div class="p-2">
+				<div class="container-sm p-3 ps-4 container-box">
+					<a href="#" class="text-decoration-none text-reset">
+						<div class="topic-description text-center">
+							Pragas e Doenças
+						</div>
+						<div class="title pt-2">
+							<span class="fw-bold">Como identificar quando uma suculenta está doente?</span>
+						</div>
+						<div class="pt-2">
+							<i class="bi bi-chat-left"></i>
+							<span id="posts" class="fw-light" style="font-size: 0.9rem;">22 comentários</span>
+						</div>
+
+						<div class="pt-5">
+							<div class="d-flex justify-content-between">
+								<span class="fw-semibold"><i class="bi bi-person-circle pe-2"></i>Sibele Moreira</span>
+								<span class="fw-light"> 22 janeiro 2025</span>
+							</div>
+						</div>
+
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="d-flex flex-column">
+			<div class="p-2">
+				<div class="container-sm p-3 ps-4 container-box">
+					<a href="#" class="text-decoration-none text-reset">
+						<div class="topic-description text-center">
+							Pragas e Doenças
+						</div>
+						<div class="title pt-2">
+							<span class="fw-bold">Como identificar quando uma suculenta está doente?</span>
+						</div>
+						<div class="pt-2">
+							<i class="bi bi-chat-left"></i>
+							<span id="posts" class="fw-light" style="font-size: 0.9rem;">22 comentários</span>
+						</div>
+
+						<div class="pt-5">
+							<div class="d-flex justify-content-between">
+								<span class="fw-semibold"><i class="bi bi-person-circle pe-2"></i>Sibele Moreira</span>
+								<span class="fw-light"> 22 janeiro 2025</span>
+							</div>
+						</div>
+
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+<style>
+	.container-box {
+		border: 1px solid black;
+		background: #fff;
+	}
+
+	.container-box:hover {
+		background: rgba(10, 70, 65, 0.1);
+	}
+
+	.topic-description {
+		background: rgba(10, 70, 65, 0.4);
+		width: 10.5%;
+		padding: 2px;
+		font-size: .8rem;
+		border-radius: 5px;
+		padding-left: 3px;
+		;
+	}
+</style>

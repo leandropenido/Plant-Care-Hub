@@ -1,0 +1,49 @@
+.help-center {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background: white;
+}
+.help-center h1 {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--color--gray-800);
+}
+.help-center h2 {
+  color: var(--color--gray-800);
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--color--gray-200);
+  padding-bottom: 6px;
+}
+.help-center ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.help-center ul p {
+  margin-bottom: 0;
+}
+.help-center ul .faq-titulo {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.help-center ul .faq-descricao {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+.help-center ul li {
+  margin-bottom: 10px;
+  cursor: default;
+}
+.help-center ul li a {
+  color: var(--color--green-dark);
+  text-decoration: none;
+}
+.help-center ul li a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=help.css.map */
